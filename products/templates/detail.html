@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="product-banner">
+        <h2>Products</h2>
+    </div>
+    <section id="deteil-section">
+        
+        <div class="detail-img">
+            <img src="{% static '/images/image 13.png' %}" alt="image">
+        </div>
+        <div class="deteil-text">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum</p>
+        </div>
+        
+    </section>
+    <section id="deteil-slider-section">
+        <div class="deteil-slider-text">
+            <h2>Bunlarada bax</h2>
+        </div>
+
+        <div class="swiper deteil-mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="{% static '/images/card 1.png' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static '/images/card 2.png' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static '/images/card 1.png' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static '/images/card 3.png' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static '/images/card 3.png' %}" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="{% static '/images/card 2.png' %}" alt="">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+
+
+
+        </div>
+
+    </section>
+
+
+{% endblock %}
+

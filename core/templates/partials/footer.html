@@ -1,0 +1,55 @@
+{% load static %}
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <div class="logo">
+                    <div class="logo-img">
+                        <img src="{% static '/images/logo.png' %}" alt="Etiket.pro ">
+                        <p>Düşüncələrinizi kağıza dönüştürürük</p>
+                    </div>
+                </div>
+                <div class="links">
+                    <h4 onclick="toggleList('linkList')">Linklər
+                        <i class="fa-solid fa-angle-down"></i>
+                    </h4>
+                    <div id="linkList" class="dropdown-footer">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="{% url 'about_page' %}">About</a></li>
+                            <li><a href="{% url 'products' %}">Products</a></li>
+                            <li><a href="{% url 'contact_page' %}">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="contact">
+                    <h4 onclick="toggleList('contactList')">Bizimlə Əlaqə
+                        <i class="fa-solid fa-angle-down"></i>
+                    </h4>
+                    <div id="contactList" class="dropdown-footer">
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            +994 50 212 13 99
+                        </p>
+                        <p><i class="fa-solid fa-envelope"></i><a href="mailto:office@tuna.az">office@tuna.az</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="address">
+                    <h4 onclick="toggleList('addresList')">Ünvan
+                        <i class="fa-solid fa-angle-down"></i>
+                    </h4>
+                    <div id="addresList" class="dropdown-footer">
+                        <p><i class="fa-solid fa-location-dot"></i> Bakı şəh., Keşlə qəs., 1-ci Öünə küçəsi 19</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copy">
+            <p>&copy; 2024 All rights reserved</p>
+        </div>
+    </div>
+</footer>
