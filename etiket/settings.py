@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'core',
     'products',
-    'rest_framework',
     
 ]
 
@@ -61,7 +60,7 @@ ROOT_URLCONF = "etiket.urls"
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Use Pathlib
+        'DIRS': [BASE_DIR / 'templates'], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

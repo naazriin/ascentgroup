@@ -7,23 +7,12 @@
     <section id="banner-slider">
         <div class="swiper bannerMySwiper">
             <div class="swiper-wrapper">
+                {% for b in banner %}
                 <div class="swiper-slide">
-                    <img src="{% static '/images/banner1.png' %}" alt="">
-                    <p>Düşüncələrinizi kağıza dönüşdürürükt. </p>
+                    <img src="{{ b.image.url }}" alt="">
+                    <p>{{ b.text }}</p>
                 </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/banner1.png' %}" alt="">
-                    <p>Düşüncələrinizi kağıza dönüşdürürükt. </p>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/banner1.png' %}" alt="">
-                    <p>Düşüncələrinizi kağıza dönüşdürürükt. </p>
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/banner1.png' %}" alt="">
-                    <p>Düşüncələrinizi kağıza dönüşdürürükt. </p>
-                </div>
-
+                {% endfor %}
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -54,28 +43,14 @@
         
         <div class="swiper product-mySwiper">
             <div class="swiper-wrapper">
+                {% for product in products %}
                 <div class="swiper-slide">
-                    <img src="{% static '/images/card 1.png' %}" alt="">
+                    <img src="{{product.image.url}}" alt="">
                 </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/card 2.png' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/card 1.png' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/card 3.png' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/card 3.png' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/card 2.png' %}" alt="">
-                </div>
+
+                {% endfor %}
             </div>
             <div class="swiper-pagination"></div>
-
-
 
         </div>
     </section>
@@ -87,24 +62,12 @@
         </div>
         <div class="swiper chosen-mySwiper">
             <div class="swiper-wrapper">
+                {% for project in projects %}
                 <div class="swiper-slide">
-                    <img src="{% static '/images/chosen1.png' %}" alt="">
+                    <img src="{{ project.image.url }}" alt="">
                 </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/chosen2.png' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/chosen5.png' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/chosen4.png' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/chosen3.png' %}" alt="">
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static '/images/chosen3.png' %}" alt="">
-                </div>
+                
+                {% endfor %}
             </div>
             <div class="swiper-pagination"></div>
 
@@ -119,67 +82,19 @@
         </div>
         <div class="swiper video-mySwiper">
             <div class="swiper-wrapper">
+                {% for video in videos %}
                 <div class="swiper-slide">
                     <div class="video-container">
                         <video width="320" height="240" id="myVideo" preload="metadata">
-                            <source src="/images/video.mov" type="video/mp4" />
+                            <source src="{{ video.video_file }}" type="video/mp4" />
                         </video>
                         <div class="play-pause-btn" id="play-pause-btn">
                             <i class="fa-solid fa-play"></i>
                             <i class="fa-solid fa-pause"></i>
                         </div>
                     </div>
-
                 </div>
-                <div class="swiper-slide">
-                    <div class="video-container">
-                        <video width="320" height="240" id="myVideo" preload="metadata">
-                            <source src="/images/video.mov" type="video/mp4" />
-                        </video>
-                        <div class="play-pause-btn" id="play-pause-btn">
-                            <i class="fa-solid fa-play"></i>
-                            <i class="fa-solid fa-pause"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="video-container">
-                        <video width="320" height="240" id="myVideo" preload="metadata">
-                            <source src="/images/video.mov" type="video/mp4" />
-                        </video>
-                        <div class="play-pause-btn" id="play-pause-btn">
-                            <i class="fa-solid fa-play"></i>
-                            <i class="fa-solid fa-pause"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="video-container">
-                        <video width="320" height="240" id="myVideo" preload="metadata">
-                            <source src="/images/video.mov" type="video/mp4" />
-                        </video>
-                        <div class="play-pause-btn" id="play-pause-btn">
-                            <i class="fa-solid fa-play"></i>
-                            <i class="fa-solid fa-pause"></i>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-slide">
-                    <div class="video-container">
-                        <video width="320" height="240" id="myVideo" preload="metadata">
-                            <source src="/images/video.mov" type="video/mp4" />
-                        </video>
-                        <div class="play-pause-btn" id="play-pause-btn">
-                            <i class="fa-solid fa-play"></i>
-                            <i class="fa-solid fa-pause"></i>
-                        </div>
-                    </div>
-
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -190,35 +105,12 @@
 
         <div class="swiper partners-slider">
             <div class="swiper-wrapper">
+                {% for partner in partners %}
                 <div class="swiper-slide">
-                    <img src="{% static 'images/logo1.png' %}" alt="">
+                    <img src="{{ partner.logo.url }}" alt="">
 
                 </div>
-
-                <div class="swiper-slide">
-                    <img src="{% static 'images/logo2.png' %}" alt="">
-
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static 'images/logo3.png' %}" alt="">
-
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static 'images/logo4.png' %}" alt="">
-
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static 'images/logo5.png' %}" alt="">
-
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static 'images/logo6.png' %}" alt="">
-
-                </div>
-                <div class="swiper-slide">
-                    <img src="{% static 'images/logo7.png' %}" alt="">
-
-                </div>
+                {% endfor %}
             </div>
 
 

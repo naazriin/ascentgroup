@@ -12,6 +12,7 @@ class DateMixin(models.Model):
 class Product(DateMixin):
     title = models.CharField(max_length=255)
     description = models.TextField()
+    long_description = models.TextField(default='...')
     image = models.ImageField(upload_to='products')
 
 

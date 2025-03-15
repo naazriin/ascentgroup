@@ -1,6 +1,8 @@
 from django import forms
-
 from .models import Contact
+
+import re
+
 
 class ContactForm(forms.ModelForm):
 
@@ -21,7 +23,7 @@ class ContactForm(forms.ModelForm):
             }),
             'subject' : forms.TextInput(attrs={
             'class': 'form-control',
-            'id': 'email',
+            'id': 'subject',
             'placeholder': 'Başlıq'
             }),
             'message' : forms.Textarea(attrs={
@@ -33,16 +35,24 @@ class ContactForm(forms.ModelForm):
         }
 
 
+
+
     def clean_email(self):
-        value = self.cleaned_data['email']
-        if not value.endswith('.com'):
-            raise forms.ValidationError('Email must end with .com!')
-        
-        return value
-    
+            email = self.cleaned_data.get('email')
+            email_regex = r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+
+            if not re.match(email_regex, email.strip()):
+                raise forms.ValidationError("Invalid email format.")
+
+            return email
+
+
+
     def clean_name(self):
-        value = self.cleaned_data['name']
-        if value == 'admin':
-            raise forms.ValidationError('Name can not be admin!')
+        value = self.cleaned_data.get('name').strip().lower()
+        forbidden_names = {'admin', 'root', 'superuser'}
+
+        if value in forbidden_names:
+            raise forms.ValidationError('This name is not allowed. Please choose a valid name.')
         
         return value
