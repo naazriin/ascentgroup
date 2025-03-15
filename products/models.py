@@ -14,6 +14,7 @@ class Product(DateMixin):
     description = models.TextField()
     image = models.ImageField(upload_to='products')
 
+
     def __str__(self):
         return self.title
     

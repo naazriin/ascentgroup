@@ -4,7 +4,7 @@ services:
     image: postgres
     restart: always
     ports:
-      - 5433:5432
+      - 5434:5432
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
@@ -16,13 +16,13 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8084:8080 
+      - 8085:8080 
 
   redis:
     image: redis
     restart: always
     ports:
-      - 6379:6379 
+      - 6378:6379 
 
 volumes:
   postgres_data: 

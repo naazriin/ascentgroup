@@ -3,10 +3,10 @@ from django.shortcuts import render, get_object_or_404
 from .models import Product
 
 def products(request):
-    products = Product.objects.all()
+    product = Product.objects.all()
 
     context = {
-        'products': products
+        'products': product
     }
     return render(request, 'products.html', context)
 
