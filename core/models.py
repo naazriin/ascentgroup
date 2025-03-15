@@ -12,8 +12,8 @@ class DateMixin(models.Model):
 
 
 class Banner(DateMixin):
-    image = models.ImageField(upload_to='banners')
     text = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='banners')
 
     def __str__(self):
         return self.text
